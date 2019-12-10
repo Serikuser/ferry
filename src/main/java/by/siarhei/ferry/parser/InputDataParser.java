@@ -1,14 +1,11 @@
+/*
 package by.siarhei.ferry.parser;
 
 import by.siarhei.ferry.entity.Coast;
-import by.siarhei.ferry.entity.impl.EastCoast;
-import by.siarhei.ferry.entity.impl.WestCoast;
 import by.siarhei.ferry.thread.Car;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class InputDataParser {
 
@@ -42,3 +39,4 @@ public class InputDataParser {
     }
 
 }
+*/

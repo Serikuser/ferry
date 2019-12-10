@@ -1,54 +1,45 @@
-Name: 6446AB-7;
+Number: 6446AB-7;
+Type: Car;
 Weight: 1.9;
-Width: 1500;
-Length: 3100;
 DestinationPoint east;
 -------------------------
-Name: 4978KH-5;
+Number: 4978KH-5;
+Type: Car;
 Weight: 1.8;
-Width: 1500;
-Length: 4500;
 DestinationPoint west;
 -------------------------
-Name: 1120IK-7;
+Number: 1120IK-7;
+Type Truck;
 Weight: 2.5;
-Width: 1948;
-Length: 5540;
 DestinationPoint east;
 -------------------------
-Name: 1835AB-2;
+Number: 1835AB-2;
+Type Truck;
 Weight: 2.9;
-Width: 1850;
-Length: 3600;
 DestinationPoint east;
 -------------------------
-Name: 6896IK-7;
+Number: 6896IK-7;
+Type Truck;
 Weight: 3.5;
-Width: 2150;
-Length: 3700;
 DestinationPoint west;
 -------------------------
-Name: 4576AB-7;
+Number: 4576AB-7;
+Type: Car;
 Weight: 1.1;
-Width: 1500;
-Length: 5800;
 DestinationPoint east;
 -------------------------
-Name: 6696AK-7;
+Number: 6696AK-7;
+Type Truck;
 Weight: 3.5;
-Width: 1550;
-Length: 4800;
 DestinationPoint west;
 -------------------------
-Name: 6666AB-6;
+Number: 6666AB-6;
+Type: Car;
 Weight: 1.3;
-Width: 1500;
-Length: 3600;
 DestinationPoint west;
 -------------------------
-Name: 1111AA-1;
+Number: 1111AA-1;
+Type: Car;
 Weight: 1.7;
-Width: 1500;
-Length: 3600;
 DestinationPoint east;
 -------------------------
