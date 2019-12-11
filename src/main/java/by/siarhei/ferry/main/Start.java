@@ -15,11 +15,8 @@ public class Start {
     public static void main(String[] args) throws InvalidInputFilePathException {
         RiverCoast eastCoast = new RiverCoast(CoastType.EAST);
         RiverCoast westCoast = new RiverCoast(CoastType.WEST);
-
         Ferry.getInstance().setEastRiverCoast(eastCoast);
         Ferry.getInstance().setWestRiverCoast(westCoast);
-
-
         InputDataReader reader = new InputDataReader();
         CarFactory factory = new CarFactory();
         List<String> cars = reader.readData();
