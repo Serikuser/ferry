@@ -1,7 +1,7 @@
 package by.siarhei.ferry.exception;
 
 public class InvalidInputFilePathException extends Exception {
-
+    // TODO: 11.12.2019 rename
     public InvalidInputFilePathException() {
     }
 

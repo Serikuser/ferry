@@ -4,7 +4,7 @@ import by.siarhei.ferry.entity.CoastType;
 import by.siarhei.ferry.thread.CarType;
 
 public class InputDataParser {
-
+    // TODO: 11.12.2019 rename
     private static final String DATA_TYPE = "(?<=[a-zA-Z][:])\\s+";
     private static final String SPLIT_SYMBOL = ";";
     private static final int CAR_NUMBER_ID = 0;

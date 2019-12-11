@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class InputDataReader {
+    // TODO: 11.12.2019 rename
     private static final String DEFAULT_INPUT_FILE = "input/input.txt";
     private static final Logger logger = LogManager.getLogger();
 
