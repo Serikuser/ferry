@@ -7,13 +7,10 @@ import by.siarhei.ferry.factory.CarFactory;
 import by.siarhei.ferry.reader.InputDataReader;
 import by.siarhei.ferry.thread.Car;
 import by.siarhei.ferry.thread.Ferry;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
 public class Start {
-    private static final Logger logger = LogManager.getLogger();
 
     public static void main(String[] args) throws InvalidInputFilePathException {
         RiverCoast eastCoast = new RiverCoast(CoastType.EAST);
