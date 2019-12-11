@@ -36,7 +36,7 @@ public class Car extends Thread {
         logger.info(String.format(
                 "Car: [%s] is loaded on ferry ", this.toString()));
         this.locker.lock();
-        reachedDestination = true;
+        this.reachedDestination = true;
         logger.info(String.format(
                 "Car: [%s] reached destination", this.toString()));
     }

@@ -38,12 +38,11 @@ public class Ferry extends Thread {
     private Ferry() {
         this.loadedCars = new LinkedList<>();
         this.state = new LoadingState(this);
-        setSailing(false);
+        this.sailing = false;
         this.currentRiverCoast = eastRiverCoast;
         this.freeParkingPlaces = MAX_PARKING_PLACES;
         this.freeCapacity = MAX_CARRYING_CAPACITY;
         this.phaser = new Phaser();
-
     }
 
     public static Ferry getInstance() {
@@ -93,15 +92,6 @@ public class Ferry extends Thread {
         this.sailing = sailing;
     }
 
-    public void sailing() {
-        logger.info("The ferry is sailing");
-        try {
-            TimeUnit.SECONDS.sleep(10);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            logger.error(e, e);
-        }
-    }
 
     public void setEastRiverCoast(RiverCoast eastRiverCoast) {
         this.eastRiverCoast = eastRiverCoast;
@@ -118,5 +108,15 @@ public class Ferry extends Thread {
 
     private RiverCoast currentCoast() {
         return this.currentRiverCoast;
+    }
+
+    private void sailing() {
+        logger.info("The ferry is sailing");
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            logger.error(e, e);
+        }
     }
 }
