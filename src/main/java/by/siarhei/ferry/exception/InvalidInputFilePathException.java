@@ -1,6 +1,7 @@
 package by.siarhei.ferry.exception;
 
 public class InvalidInputFilePathException extends Exception {
+
     public InvalidInputFilePathException() {
     }
 

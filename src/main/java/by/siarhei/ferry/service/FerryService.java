@@ -1,6 +1,6 @@
 package by.siarhei.ferry.service;
 
-import by.siarhei.ferry.entity.impl.RiverCoast;
+import by.siarhei.ferry.entity.RiverCoast;
 import by.siarhei.ferry.thread.Car;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,24 +9,20 @@ import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 
 public class FerryService {
-    static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger();
 
-
-    public void loadFerry(RiverCoast currentRiverCoast, int freeParkingPlaces, double freeCapacity) {
+    public void loadCarsOnFerry(RiverCoast currentRiverCoast, int freeParkingPlaces, double freeCapacity) {
         logger.info(String.format("Loading ferry on %s coast", currentRiverCoast.getType()));
-        int count = currentRiverCoast.getCarList().size();
-        for (int i = 0; i < count; i++) {
+        logger.info(String.format("Cars on %s coast: %s", currentRiverCoast.getType(), currentRiverCoast.getCarList()));
+        int parkedCars = currentRiverCoast.getCarList().size();
+        for (int i = 0; i < parkedCars; i++) {
             Car car = currentRiverCoast.getCar();
-            if (car == null) {
-                return;
-            }
-            if (freeCapacity >= car.getWeight() && freeParkingPlaces >= car.getSize() && !car.isReachedDestination()) {
-                car.start();
-                car.getLock().lock();
+            if (!isFerryFull(freeParkingPlaces, freeCapacity, car)) {
+                acceptCarToParkOnFerry(car);
                 freeCapacity -= car.getWeight();
                 freeParkingPlaces -= car.getSize();
                 try {
-                    TimeUnit.SECONDS.sleep(1);
+                    TimeUnit.SECONDS.sleep(3);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                     logger.error(e, e);
@@ -38,13 +34,26 @@ public class FerryService {
         logger.info("The ferry is full");
     }
 
-    public void unloadFerry(RiverCoast currentRiverCoast, Queue<Car> loadedCars) {
+    public void unloadCarsFromFerry(RiverCoast currentRiverCoast, Queue<Car> loadedCars) {
         logger.info(String.format("The ferry is unloading on %s coast", currentRiverCoast.getType()));
         while (!loadedCars.isEmpty()) {
-            Car car = loadedCars.poll();
-            car.getLock().unlock();
+            unloadCarFromFerry(loadedCars);
         }
-        logger.info("Ferry unloading finished");
+        logger.info("The ferry unloading finished");
+    }
+
+    private boolean isFerryFull(int freeParkingPlaces, double freeCapacity, Car car) {
+        return !(freeCapacity >= car.getWeight() && freeParkingPlaces >= car.getSize() && !car.isReachedDestination());
+    }
+
+    private void acceptCarToParkOnFerry(Car car) {
+        car.start();
+        car.getLock().lock();
+    }
+
+    private void unloadCarFromFerry(Queue<Car> loadedCars) {
+        Car car = loadedCars.poll();
+        car.getLock().unlock();
     }
 }
 

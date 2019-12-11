@@ -1,13 +1,11 @@
-package by.siarhei.ferry.entity.impl;
+package by.siarhei.ferry.entity;
 
-import by.siarhei.ferry.entity.Coast;
-import by.siarhei.ferry.entity.CoastType;
 import by.siarhei.ferry.thread.Car;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class RiverCoast implements Coast {
+public class RiverCoast {
     private Queue<Car> cars = null;
     private CoastType coast;
 
