@@ -18,7 +18,7 @@ public class Start {
         Ferry.getInstance().setEastRiverCoast(eastCoast);
         Ferry.getInstance().setWestRiverCoast(westCoast);
         InputDataReader reader = new InputDataReader();
-        CarFactory factory = new CarFactory();
+        CarFactory factory = CarFactory.getInstance();
         List<String> cars = reader.readData();
         for (String line : cars) {
             if (!line.isBlank()) {
