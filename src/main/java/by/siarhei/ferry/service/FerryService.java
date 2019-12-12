@@ -19,8 +19,9 @@ public class FerryService {
                 , currentRiverCoast.getType(), currentRiverCoast.getType(), currentRiverCoast.getCarList()));
         int parkedCars = currentRiverCoast.getCarList().size();
         executor = Executors.newCachedThreadPool();
+        Car car;
         for (int i = 0; i < parkedCars; i++) {
-            Car car = currentRiverCoast.getCar();
+            car = currentRiverCoast.getCar();
             if (!isFerryFull(freeParkingPlaces, freeCapacity, car)) {
                 acceptCarToParkOnFerry(executor, car);
                 freeCapacity -= car.getWeight();
