@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Ferry extends Thread {
+public class Ferry implements Runnable {
     private static final Logger logger = LogManager.getLogger();
 
     private static final int MAX_PARKING_PLACES = 8;
@@ -116,7 +116,7 @@ public class Ferry extends Thread {
             TimeUnit.SECONDS.sleep(10);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            logger.error(e, e);
+            logger.error("Thread cannot be sleeped throwing exception:", e);
         }
     }
 }
