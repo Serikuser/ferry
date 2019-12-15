@@ -4,8 +4,8 @@ import by.siarhei.ferry.entity.CoastType;
 import by.siarhei.ferry.entity.RiverCoast;
 import by.siarhei.ferry.factory.CarFactory;
 import by.siarhei.ferry.reader.CarDataReader;
-import by.siarhei.ferry.thread.Car;
-import by.siarhei.ferry.thread.Ferry;
+import by.siarhei.ferry.entity.Car;
+import by.siarhei.ferry.entity.Ferry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

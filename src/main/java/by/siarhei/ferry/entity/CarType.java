@@ -1,8 +1,9 @@
-package by.siarhei.ferry.thread;
+package by.siarhei.ferry.entity;
 
 public enum CarType {
     CAR(1),
     TRUCK(3);
+
     private int occupiedParkingPlaces;
 
     CarType(int parkingPlace) {

@@ -1,7 +1,7 @@
 package by.siarhei.ferry.service;
 
 import by.siarhei.ferry.entity.RiverCoast;
-import by.siarhei.ferry.thread.Car;
+import by.siarhei.ferry.entity.Car;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

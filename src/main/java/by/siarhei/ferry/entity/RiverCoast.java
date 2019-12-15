@@ -1,17 +1,15 @@
 package by.siarhei.ferry.entity;
 
-import by.siarhei.ferry.thread.Car;
-
-import java.util.LinkedList;
+import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class RiverCoast {
-    private Queue<Car> cars = null;
+    private Queue<Car> cars;
     private CoastType coast;
 
     public RiverCoast(CoastType coast) {
         this.coast = coast;
-        cars = new LinkedList<>();
+        cars = new ArrayDeque<>();
     }
 
     public Queue<Car> getCarList() {

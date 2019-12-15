@@ -1,18 +1,20 @@
 package by.siarhei.ferry.state;
 
-import by.siarhei.ferry.thread.Ferry;
+import by.siarhei.ferry.service.FerryService;
+import by.siarhei.ferry.entity.Ferry;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public abstract class FerryState {
-    // TODO: 11.12.2019
-    Ferry ferry;
 
-    FerryState(Ferry ferry) {
-        this.ferry = ferry;
+    protected static final Logger logger = LogManager.getLogger();
+
+    protected Ferry ferry;
+
+    FerryState() {
+        this.ferry = Ferry.getInstance();
     }
 
-    public abstract String onSeiling();
+    public abstract void interpret(FerryService service);
 
-    public abstract String onUnload();
-
-    public abstract String onLoad();
 }

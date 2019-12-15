@@ -1,26 +1,20 @@
 package by.siarhei.ferry.state;
 
-import by.siarhei.ferry.thread.Ferry;
+import by.siarhei.ferry.service.FerryService;
+
+import java.util.concurrent.TimeUnit;
 
 public class SailingState extends FerryState {
 
-    public SailingState(Ferry ferry) {
-        super(ferry);
-        ferry.setSailing(true);
-    }
-
     @Override
-    public String onSeiling() {
-        return null;
-    }
-
-    @Override
-    public String onUnload() {
-        return null;
-    }
-
-    @Override
-    public String onLoad() {
-        return null;
+    public void interpret(FerryService service) {
+        logger.info("The ferry is sailing");
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            logger.error("Thread cannot be sleeped throwing exception:", e);
+        }
+        ferry.changeState(new UnloadingState());
     }
 }

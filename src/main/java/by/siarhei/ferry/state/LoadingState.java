@@ -1,26 +1,12 @@
 package by.siarhei.ferry.state;
 
-import by.siarhei.ferry.thread.Ferry;
+import by.siarhei.ferry.service.FerryService;
 
 public class LoadingState extends FerryState {
 
-    public LoadingState(Ferry ferry) {
-        super(ferry);
-        ferry.setSailing(false);
-    }
-
     @Override
-    public String onSeiling() {
-        return null;
-    }
-
-    @Override
-    public String onUnload() {
-        return null;
-    }
-
-    @Override
-    public String onLoad() {
-        return null;
+    public void interpret(FerryService service) {
+        service.loadCarsOnFerry(ferry.currentCoast(), ferry.MAX_PARKING_PLACES, ferry.MAX_CARRYING_CAPACITY);
+        ferry.changeState(new SailingState());
     }
 }

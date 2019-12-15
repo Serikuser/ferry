@@ -1,6 +1,5 @@
-package by.siarhei.ferry.thread;
+package by.siarhei.ferry.entity;
 
-import by.siarhei.ferry.entity.CoastType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

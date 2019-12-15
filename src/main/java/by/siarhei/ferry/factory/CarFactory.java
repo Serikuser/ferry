@@ -2,8 +2,8 @@ package by.siarhei.ferry.factory;
 
 import by.siarhei.ferry.entity.CoastType;
 import by.siarhei.ferry.parser.CarDataParser;
-import by.siarhei.ferry.thread.Car;
-import by.siarhei.ferry.thread.CarType;
+import by.siarhei.ferry.entity.Car;
+import by.siarhei.ferry.entity.CarType;
 
 public class CarFactory {
     private static CarFactory instance;
